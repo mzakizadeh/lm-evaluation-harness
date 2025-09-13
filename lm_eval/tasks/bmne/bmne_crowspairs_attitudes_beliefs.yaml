@@ -1,0 +1,9 @@
+include: bmne_crowspairs.yaml
+task: bmne_crowspairs_attitudes_beliefs
+filter_list:
+  - filter:
+      function: "lambda doc: doc['category'] == 'Attitudes and Beliefs'"
+      name: "attitudes_beliefs_filter"
+metadata:
+  version: 1.0
+  description: "BMNE CrowS-Pairs - Attitudes and Beliefs: Gender bias evaluation for attitude and belief stereotypes (60 examples)."

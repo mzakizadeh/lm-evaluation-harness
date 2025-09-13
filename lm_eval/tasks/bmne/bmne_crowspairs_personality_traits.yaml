@@ -1,0 +1,9 @@
+include: bmne_crowspairs.yaml
+task: bmne_crowspairs_personality_traits
+filter_list:
+  - filter:
+      function: "lambda doc: doc['category'] == 'Personality Traits'"
+      name: "personality_traits_filter"
+metadata:
+  version: 1.0
+  description: "BMNE CrowS-Pairs - Personality Traits: Gender bias evaluation for personality trait stereotypes (20 examples)."

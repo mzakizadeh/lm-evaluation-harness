@@ -1,0 +1,9 @@
+include: bmne_stereoset.yaml
+task: bmne_stereoset_roles_behaviors
+filter_list:
+  - filter:
+      function: "lambda doc: doc['category'] == 'Roles and Behaviors'"
+      name: "roles_behaviors_filter"
+metadata:
+  version: 1.0
+  description: "BMNE StereoSet - Roles and Behaviors: Gender bias evaluation for role and behavior stereotypes (58 examples)."

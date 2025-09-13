@@ -1,0 +1,9 @@
+include: bmne_crowspairs.yaml
+task: bmne_crowspairs_physical_characteristics
+filter_list:
+  - filter:
+      function: "lambda doc: doc['category'] == 'Physical Characteristics'"
+      name: "physical_characteristics_filter"
+metadata:
+  version: 1.0
+  description: "BMNE CrowS-Pairs - Physical Characteristics: Gender bias evaluation for physical characteristic stereotypes (9 examples)."

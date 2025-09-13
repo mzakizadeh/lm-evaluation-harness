@@ -1,0 +1,12 @@
+group: bmne
+task: 
+  - bmne_crowspairs
+  - bmne_stereoset
+  - bmne_crowspairs_attitudes_beliefs
+  - bmne_crowspairs_personality_traits
+  - bmne_crowspairs_physical_characteristics
+  - bmne_crowspairs_roles_behaviors
+  - bmne_stereoset_attitudes_beliefs
+  - bmne_stereoset_personality_traits
+  - bmne_stereoset_physical_characteristics
+  - bmne_stereoset_roles_behaviors
