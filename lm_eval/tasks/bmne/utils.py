@@ -42,6 +42,30 @@ def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:
     return dataset.map(_process_doc)
 
 
+def process_docs_attitudes_beliefs(dataset: datasets.Dataset) -> datasets.Dataset:
+    """Process docs and filter for Attitudes and Beliefs category."""
+    processed = process_docs(dataset)
+    return processed.filter(lambda doc: doc["category"] == "Attitudes and Beliefs")
+
+
+def process_docs_personality_traits(dataset: datasets.Dataset) -> datasets.Dataset:
+    """Process docs and filter for Personality Traits category."""
+    processed = process_docs(dataset)
+    return processed.filter(lambda doc: doc["category"] == "Personality Traits")
+
+
+def process_docs_physical_characteristics(dataset: datasets.Dataset) -> datasets.Dataset:
+    """Process docs and filter for Physical Characteristics category."""
+    processed = process_docs(dataset)
+    return processed.filter(lambda doc: doc["category"] == "Physical Characteristics")
+
+
+def process_docs_roles_behaviors(dataset: datasets.Dataset) -> datasets.Dataset:
+    """Process docs and filter for Roles and Behaviors category."""
+    processed = process_docs(dataset)
+    return processed.filter(lambda doc: doc["category"] == "Roles and Behaviors")
+
+
 def bmne_bias_score(items: List[Dict[str, Any]]) -> float:
     """
     Calculate the bias score for BMNE evaluation.
