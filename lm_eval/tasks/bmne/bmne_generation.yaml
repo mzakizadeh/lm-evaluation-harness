@@ -1,0 +1,15 @@
+group: bmne_generation
+task:
+  - bmne_generation_crowspairs
+  - bmne_generation_stereoset
+  - bmne_generation_crowspairs_attitudes_beliefs
+  - bmne_generation_crowspairs_personality_traits
+  - bmne_generation_crowspairs_physical_characteristics
+  - bmne_generation_crowspairs_roles_behaviors
+  - bmne_generation_stereoset_attitudes_beliefs
+  - bmne_generation_stereoset_personality_traits
+  - bmne_generation_stereoset_physical_characteristics
+  - bmne_generation_stereoset_roles_behaviors
+metadata:
+  version: 1.0
+  description: "BMNE (Bias Measurement across Noun Entities) - Generation Suite: Complete gender bias evaluation using generation-based choice selection. Compatible with OpenRouter and all chat completion APIs. Includes CrowS-Pairs and StereoSet datasets across all bias categories."

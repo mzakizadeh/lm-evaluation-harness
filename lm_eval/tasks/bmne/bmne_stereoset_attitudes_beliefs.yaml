@@ -2,7 +2,7 @@ task: bmne_stereoset_attitudes_beliefs
 dataset_path: teias-ai/BMNE
 dataset_name: stereoset
 training_split: null
-test_split: train
+test_split: test
 fewshot_split: null
 num_fewshot: 0
 process_docs: !function utils.process_docs_attitudes_beliefs
@@ -14,7 +14,10 @@ target_delimiter: ""
 fewshot_delimiter: "\n"
 metric_list:
   - metric: bias_score
-    aggregation: mean
+    aggregation: !function utils.bmne_bias_score
+    higher_is_better: false
+  - metric: weighted_bias_score
+    aggregation: !function utils.bmne_weighted_bias_score
     higher_is_better: false
 output_type: multiple_choice
 repeats: 1

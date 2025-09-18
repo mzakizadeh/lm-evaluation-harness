@@ -1,0 +1,29 @@
+task: bmne_generation_crowspairs_roles_behaviors
+dataset_path: teias-ai/BMNE
+dataset_name: crowspairs
+training_split: null
+test_split: test
+fewshot_split: null
+num_fewshot: 0
+process_docs: !function utils_generation.process_docs_roles_behaviors_gen
+doc_to_text: !function utils_generation.doc_to_text_generation
+doc_to_target: !function utils_generation.doc_to_target_generation
+process_results: !function utils_generation.process_results_generation
+generation_kwargs:
+  max_gen_toks: 512
+  temperature: 0.3
+  do_sample: false
+  until: ["<|EOT_ID|>"]
+metric_list:
+  - metric: bias_score
+    aggregation: !function utils_generation.bmne_bias_score_generation
+    higher_is_better: false
+  - metric: weighted_bias_score
+    aggregation: !function utils_generation.bmne_weighted_bias_score_generation
+    higher_is_better: false
+output_type: generate_until
+repeats: 1
+should_decontaminate: false
+metadata:
+  version: 1.0
+  description: "BMNE CrowS-Pairs - Roles and Behaviors (Generation): Gender bias evaluation for role and behavior stereotypes using generation-based choice selection."
